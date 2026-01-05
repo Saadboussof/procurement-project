@@ -1,0 +1,39 @@
+{
+  "supplier_name": "Cosumar",
+  "lead_time_days": 3,
+  "order_date": "2026-01-05",
+  "items": [
+    {
+      "product_sku": "P_301",
+      "product_name": "Sucre Granule 1kg",
+      "raw_demand": 653,
+      "pack_size": 25,
+      "min_order_quantity": 50,
+      "order_quantity": 675
+    },
+    {
+      "product_sku": "P_304",
+      "product_name": "Miel 500g",
+      "raw_demand": 56,
+      "pack_size": 6,
+      "min_order_quantity": 12,
+      "order_quantity": 60
+    },
+    {
+      "product_sku": "P_303",
+      "product_name": "Sucre Glace 500g",
+      "raw_demand": 108,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 108
+    },
+    {
+      "product_sku": "P_302",
+      "product_name": "Sucre Morceaux 1kg",
+      "raw_demand": 263,
+      "pack_size": 20,
+      "min_order_quantity": 40,
+      "order_quantity": 280
+    }
+  ]
+}

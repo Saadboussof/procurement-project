@@ -1,0 +1,55 @@
+{
+  "supplier_name": "Bimo (Mondelez)",
+  "lead_time_days": 2,
+  "order_date": "2026-01-05",
+  "items": [
+    {
+      "product_sku": "P_404",
+      "product_name": "Cookies Chocolat",
+      "raw_demand": 251,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 252
+    },
+    {
+      "product_sku": "P_406",
+      "product_name": "Crackers Sales",
+      "raw_demand": 264,
+      "pack_size": 18,
+      "min_order_quantity": 36,
+      "order_quantity": 270
+    },
+    {
+      "product_sku": "P_405",
+      "product_name": "Gaufrettes Fraise",
+      "raw_demand": 135,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 144
+    },
+    {
+      "product_sku": "P_402",
+      "product_name": "Tagger Vanille",
+      "raw_demand": 397,
+      "pack_size": 24,
+      "min_order_quantity": 48,
+      "order_quantity": 408
+    },
+    {
+      "product_sku": "P_401",
+      "product_name": "Tagger Chocolate",
+      "raw_demand": 441,
+      "pack_size": 24,
+      "min_order_quantity": 48,
+      "order_quantity": 456
+    },
+    {
+      "product_sku": "P_403",
+      "product_name": "Biscuit Petit Dejeuner",
+      "raw_demand": 244,
+      "pack_size": 12,
+      "min_order_quantity": 36,
+      "order_quantity": 252
+    }
+  ]
+}
