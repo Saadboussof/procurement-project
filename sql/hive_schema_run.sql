@@ -10,7 +10,7 @@ CREATE TABLE hive.procurement.orders (
 )
 WITH (
     format = 'JSON',
-    external_location = 'hdfs://namenode:9000/raw/orders/2026-01-05'
+    external_location = 'hdfs://namenode:9000/raw/orders/2026-01-06'
 );
 
 DROP TABLE IF EXISTS hive.procurement.inventory;
@@ -24,5 +24,5 @@ CREATE TABLE hive.procurement.inventory (
 WITH (
     format = 'CSV',
     skip_header_line_count = 1,
-    external_location = 'hdfs://namenode:9000/raw/stock/2026-01-05'
+    external_location = 'hdfs://namenode:9000/raw/stock/2026-01-06'
 );
