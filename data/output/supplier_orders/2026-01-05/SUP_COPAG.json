@@ -6,50 +6,50 @@
     {
       "product_sku": "P_504",
       "product_name": "Jus Pomme 1L",
-      "raw_demand": 134,
+      "raw_demand": 146,
       "pack_size": 12,
       "min_order_quantity": 24,
-      "order_quantity": 144
-    },
-    {
-      "product_sku": "P_505",
-      "product_name": "Jus Multifruits 1L",
-      "raw_demand": 220,
-      "pack_size": 12,
-      "min_order_quantity": 24,
-      "order_quantity": 228
-    },
-    {
-      "product_sku": "P_506",
-      "product_name": "Lait Fermente 1L",
-      "raw_demand": 312,
-      "pack_size": 12,
-      "min_order_quantity": 36,
-      "order_quantity": 312
-    },
-    {
-      "product_sku": "P_501",
-      "product_name": "Lben 500ml",
-      "raw_demand": 413,
-      "pack_size": 12,
-      "min_order_quantity": 48,
-      "order_quantity": 420
+      "order_quantity": 156
     },
     {
       "product_sku": "P_502",
       "product_name": "Raib 500ml",
-      "raw_demand": 135,
+      "raw_demand": 102,
       "pack_size": 12,
       "min_order_quantity": 48,
-      "order_quantity": 144
+      "order_quantity": 108
+    },
+    {
+      "product_sku": "P_501",
+      "product_name": "Lben 500ml",
+      "raw_demand": 345,
+      "pack_size": 12,
+      "min_order_quantity": 48,
+      "order_quantity": 348
     },
     {
       "product_sku": "P_503",
       "product_name": "Jus Orange 1L",
-      "raw_demand": 296,
+      "raw_demand": 121,
       "pack_size": 12,
       "min_order_quantity": 24,
-      "order_quantity": 300
+      "order_quantity": 132
+    },
+    {
+      "product_sku": "P_505",
+      "product_name": "Jus Multifruits 1L",
+      "raw_demand": 200,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 204
+    },
+    {
+      "product_sku": "P_506",
+      "product_name": "Lait Fermente 1L",
+      "raw_demand": 75,
+      "pack_size": 12,
+      "min_order_quantity": 36,
+      "order_quantity": 84
     }
   ]
 }

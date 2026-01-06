@@ -1,0 +1,114 @@
+[05/01/2026 22:00:01,82] Starting Procurement Pipeline... 
+=== Procurement Pipeline Setup & Test (Date: 2026-01-05) ===
+
+[1/7] Generating Data...
+Running: C:\Users\drqsa\AppData\Local\Programs\Python\Python312\python.exe generate_data.py
+
+[2/7] Checking Docker Containers...
+Running: docker ps
+  All required containers are running.
+
+[3/7] Uploading Data to HDFS...
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/orders/2026-01-05
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/stock/2026-01-05
+Running: docker cp data/raw/orders/2026-01-05\orders-agadir.json namenode:/tmp/orders-agadir.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-agadir.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-casablanca.json namenode:/tmp/orders-casablanca.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-casablanca.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-fes.json namenode:/tmp/orders-fes.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-fes.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-kenitra.json namenode:/tmp/orders-kenitra.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-kenitra.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-marrakech.json namenode:/tmp/orders-marrakech.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-marrakech.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-meknes.json namenode:/tmp/orders-meknes.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-meknes.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-oujda.json namenode:/tmp/orders-oujda.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-oujda.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-rabat.json namenode:/tmp/orders-rabat.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-rabat.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-tangier.json namenode:/tmp/orders-tangier.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-tangier.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/orders/2026-01-05\orders-tetouan.json namenode:/tmp/orders-tetouan.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-tetouan.json /raw/orders/2026-01-05/
+Running: docker cp data/raw/stock/2026-01-05\inventory.csv namenode:/tmp/inventory.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/inventory.csv /raw/stock/2026-01-05/
+Running: docker exec namenode hdfs dfs -ls -R /raw
+  HDFS Content:
+drwxr-xr-x   - root supergroup          0 2026-01-05 19:18 /raw/orders
+drwxr-xr-x   - root supergroup          0 2026-01-05 21:00 /raw/orders/2026-01-05
+-rw-r--r--   3 root supergroup      16773 2026-01-05 21:00 /raw/orders/2026-01-05/orders-agadir.json
+-rw-r--r--   3 root supergroup       9594 2026-01-05 21:00 /raw/orders/2026-01-05/orders-casablanca.json
+-rw-r--r--   3 root supergroup      15695 2026-01-05 21:00 /raw/orders/2026-01-05/orders-fes.json
+-rw-r--r--   3 root supergroup       8821 2026-01-05 21:00 /raw/orders/2026-01-05/orders-kenitra.json
+-rw-r--r--   3 root supergroup      12416 2026-01-05 21:00 /raw/orders/2026-01-05/orders-marrakech.json
+-rw-r--r--   3 root supergroup      20927 2026-01-05 21:00 /raw/orders/2026-01-05/orders-meknes.json
+-rw-r--r--   3 root supergroup      10319 2026-01-05 21:00 /raw/orders/2026-01-05/orders-oujda.json
+-rw-r--r--   3 root supergroup      15484 2026-01-05 21:00 /raw/orders/2026-01-05/orders-rabat.json
+-rw-r--r--   3 root supergroup      20616 2026-01-05 21:00 /raw/orders/2026-01-05/orders-tangier.json
+-rw-r--r--   3 root supergroup      13596 2026-01-05 21:00 /raw/orders/2026-01-05/orders-tetouan.json
+drwxr-xr-x   - root supergroup          0 2026-01-05 19:18 /raw/stock
+drwxr-xr-x   - root supergroup          0 2026-01-05 21:00 /raw/stock/2026-01-05
+-rw-r--r--   3 root supergroup        740 2026-01-05 21:00 /raw/stock/2026-01-05/inventory.csv
+
+
+[4/7] Creating Hive Tables via Trino...
+Running: docker cp sql/hive_schema_run.sql trino:/tmp/hive_schema_run.sql
+  Waiting for Trino...
+Running: docker exec trino trino --execute "SELECT 1"
+Running: docker exec trino trino --file /tmp/hive_schema_run.sql
+  DDL Output:
+
+
+[5/7] Calculating Net Demand & Generating Supplier Orders...
+Running: docker cp sql/net_demand.sql trino:/tmp/net_demand.sql
+Running: docker exec trino trino --file /tmp/net_demand.sql --output-format CSV_HEADER
+Running: docker exec namenode hdfs dfs -mkdir -p /processed/aggregated_orders/2026-01-05
+Running: docker exec namenode hdfs dfs -mkdir -p /processed/net_demand/2026-01-05
+Running: docker cp data/processed/net_demand/2026-01-05/net_demand.csv namenode:/tmp/net_demand.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/net_demand.csv /processed/net_demand/2026-01-05/
+  -> Generated order for SUP_DANONE: data/output/supplier_orders/2026-01-05/SUP_DANONE.json
+Running: docker exec namenode hdfs dfs -mkdir -p /output/supplier_orders/2026-01-05
+Running: docker cp data/output/supplier_orders/2026-01-05/SUP_DANONE.json namenode:/tmp/SUP_DANONE.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/SUP_DANONE.json /output/supplier_orders/2026-01-05/
+  -> Generated order for SUP_COSUMAR: data/output/supplier_orders/2026-01-05/SUP_COSUMAR.json
+Running: docker exec namenode hdfs dfs -mkdir -p /output/supplier_orders/2026-01-05
+Running: docker cp data/output/supplier_orders/2026-01-05/SUP_COSUMAR.json namenode:/tmp/SUP_COSUMAR.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/SUP_COSUMAR.json /output/supplier_orders/2026-01-05/
+  -> Generated order for SUP_COPAG: data/output/supplier_orders/2026-01-05/SUP_COPAG.json
+Running: docker exec namenode hdfs dfs -mkdir -p /output/supplier_orders/2026-01-05
+Running: docker cp data/output/supplier_orders/2026-01-05/SUP_COPAG.json namenode:/tmp/SUP_COPAG.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/SUP_COPAG.json /output/supplier_orders/2026-01-05/
+  -> Generated order for SUP_BIMO: data/output/supplier_orders/2026-01-05/SUP_BIMO.json
+Running: docker exec namenode hdfs dfs -mkdir -p /output/supplier_orders/2026-01-05
+Running: docker cp data/output/supplier_orders/2026-01-05/SUP_BIMO.json namenode:/tmp/SUP_BIMO.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/SUP_BIMO.json /output/supplier_orders/2026-01-05/
+  -> Generated order for SUP_LESIEUR: data/output/supplier_orders/2026-01-05/SUP_LESIEUR.json
+Running: docker exec namenode hdfs dfs -mkdir -p /output/supplier_orders/2026-01-05
+Running: docker cp data/output/supplier_orders/2026-01-05/SUP_LESIEUR.json namenode:/tmp/SUP_LESIEUR.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/SUP_LESIEUR.json /output/supplier_orders/2026-01-05/
+
+[6/7] Saving Aggregated Orders to HDFS...
+Running: docker cp sql/aggregated_orders.sql trino:/tmp/aggregated_orders.sql
+Running: docker exec trino trino --file /tmp/aggregated_orders.sql --output-format CSV_HEADER
+Running: docker cp data/processed/aggregated_orders/2026-01-05/aggregated_orders.csv namenode:/tmp/aggregated_orders.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/aggregated_orders.csv /processed/aggregated_orders/2026-01-05/
+  -> Saved aggregated orders to HDFS /processed/aggregated_orders/2026-01-05/
+
+[7/7] Checking for Exceptions...
+Running: docker cp sql/exceptions.sql trino:/tmp/exceptions.sql
+Running: docker exec trino trino --file /tmp/exceptions.sql --output-format CSV_HEADER
+Running: docker exec namenode hdfs dfs -mkdir -p /logs/exceptions/2026-01-05
+  No exceptions found.
+
+=== Pipeline Complete ===
+Traceback (most recent call last):
+  File "c:\Users\drqsa\Desktop\procurement-project\main.py", line 231, in <module>
+    main()
+  File "c:\Users\drqsa\Desktop\procurement-project\main.py", line 228, in main
+    print("\n\u2705 Test Passed! Pipeline is working.")
+  File "C:\Users\drqsa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 2: character maps to <undefined>
+[05/01/2026 22:01:32,87] Pipeline Complete. 

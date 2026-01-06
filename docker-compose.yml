@@ -27,7 +27,9 @@ services:
     environment:
       SERVICE_NAME: metastore
       HIVE_SITE_CONF_javax_jdo_option_ConnectionURL: "jdbc:derby:;databaseName=metastore_db;create=true"
-    command: /opt/hive/bin/hive --service metastore
+      SKIP_SCHEMA_INIT: "true"
+    volumes:
+      - hive-metastore-data:/opt/hive/data
     ports:
       - "9083:9083"
     links:
@@ -55,3 +57,6 @@ services:
       - "5432:5432"
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  hive-metastore-data:
