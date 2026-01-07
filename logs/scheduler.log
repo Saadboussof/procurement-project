@@ -112,3 +112,125 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 2: character maps to <undefined>
 [05/01/2026 22:01:32,87] Pipeline Complete. 
+[06/01/2026 22:00:02,42] Starting Procurement Pipeline... 
+=== Procurement Pipeline Setup & Test (Date: 2026-01-06) ===
+
+[1/7] Generating Data...
+Running: C:\Users\drqsa\AppData\Local\Programs\Python\Python312\python.exe generate_data.py
+
+[2/7] Checking Docker Containers...
+Running: docker ps
+  Warning: The following containers seem to be missing or not running: ['namenode', 'trino', 'hive-metastore', 'postgres']
+  Please run 'docker-compose up -d' and wait for them to initialize.
+
+[3/7] Uploading Data to HDFS...
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/orders/2026-01-06
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/stock/2026-01-06
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-agadir.json namenode:/tmp/orders-agadir.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-agadir.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-casablanca.json namenode:/tmp/orders-casablanca.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-casablanca.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-fes.json namenode:/tmp/orders-fes.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-fes.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-kenitra.json namenode:/tmp/orders-kenitra.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-kenitra.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-marrakech.json namenode:/tmp/orders-marrakech.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-marrakech.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-meknes.json namenode:/tmp/orders-meknes.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-meknes.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-oujda.json namenode:/tmp/orders-oujda.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-oujda.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-rabat.json namenode:/tmp/orders-rabat.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-rabat.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-tangier.json namenode:/tmp/orders-tangier.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-tangier.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/orders/2026-01-06\orders-tetouan.json namenode:/tmp/orders-tetouan.json
+Running: docker exec namenode hdfs dfs -put -f /tmp/orders-tetouan.json /raw/orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/raw/stock/2026-01-06\inventory.csv namenode:/tmp/inventory.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/inventory.csv /raw/stock/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker exec namenode hdfs dfs -ls -R /raw
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+  HDFS Content:
+
+
+[4/7] Creating Hive Tables via Trino...
+Running: docker cp sql/hive_schema_run.sql trino:/tmp/hive_schema_run.sql
+  Waiting for Trino...
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --execute "SELECT 1"
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec trino trino --file /tmp/hive_schema_run.sql
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+  DDL Output:
+
+
+[5/7] Calculating Net Demand & Generating Supplier Orders...
+Running: docker cp sql/net_demand.sql trino:/tmp/net_demand.sql
+Running: docker exec trino trino --file /tmp/net_demand.sql --output-format CSV_HEADER
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec namenode hdfs dfs -mkdir -p /processed/aggregated_orders/2026-01-06
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker exec namenode hdfs dfs -mkdir -p /processed/net_demand/2026-01-06
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+Running: docker cp data/processed/net_demand/2026-01-06/net_demand.csv namenode:/tmp/net_demand.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/net_demand.csv /processed/net_demand/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+
+[6/7] Saving Aggregated Orders to HDFS...
+Running: docker cp sql/aggregated_orders.sql trino:/tmp/aggregated_orders.sql
+Running: docker exec trino trino --file /tmp/aggregated_orders.sql --output-format CSV_HEADER
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker cp data/processed/aggregated_orders/2026-01-06/aggregated_orders.csv namenode:/tmp/aggregated_orders.csv
+Running: docker exec namenode hdfs dfs -put -f /tmp/aggregated_orders.csv /processed/aggregated_orders/2026-01-06/
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+  -> Saved aggregated orders to HDFS /processed/aggregated_orders/2026-01-06/
+
+[7/7] Checking for Exceptions...
+Running: docker cp sql/exceptions.sql trino:/tmp/exceptions.sql
+Running: docker exec trino trino --file /tmp/exceptions.sql --output-format CSV_HEADER
+  Error (code 1): Error response from daemon: container b9d4f930f80b75814bb3e648c50cbcfa2275a3c83377058dc759abee6c1bcc2c is not running
+Running: docker exec namenode hdfs dfs -mkdir -p /logs/exceptions/2026-01-06
+  Error (code 1): Error response from daemon: container c051f0f1c7f10c759de28a51d07ebb733f8f326c7a4d931372f85977e54708d6 is not running
+  No exceptions found.
+
+=== Pipeline Complete ===
+Traceback (most recent call last):
+  File "c:\Users\drqsa\Desktop\procurement-project\main.py", line 231, in <module>
+    main()
+  File "c:\Users\drqsa\Desktop\procurement-project\main.py", line 226, in main
+    print("\n\u274c Test Failed.")
+  File "C:\Users\drqsa\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u274c' in position 2: character maps to <undefined>
+[06/01/2026 22:00:59,97] Pipeline Complete. 
