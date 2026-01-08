@@ -1,3 +1,6 @@
+-- Create metastore database for Hive
+CREATE DATABASE metastore_db;
+
 CREATE TABLE products (
     sku VARCHAR(50) PRIMARY KEY,
     name VARCHAR(100),

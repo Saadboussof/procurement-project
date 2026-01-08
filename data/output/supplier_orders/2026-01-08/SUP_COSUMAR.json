@@ -4,36 +4,36 @@
   "order_date": "2026-01-08",
   "items": [
     {
-      "product_sku": "P_301",
-      "product_name": "Sucre Granule 1kg",
-      "raw_demand": 551,
-      "pack_size": 25,
-      "min_order_quantity": 50,
-      "order_quantity": 575
-    },
-    {
       "product_sku": "P_302",
       "product_name": "Sucre Morceaux 1kg",
-      "raw_demand": 129,
+      "raw_demand": 233,
       "pack_size": 20,
       "min_order_quantity": 40,
-      "order_quantity": 140
+      "order_quantity": 240
     },
     {
       "product_sku": "P_303",
       "product_name": "Sucre Glace 500g",
-      "raw_demand": 26,
+      "raw_demand": 92,
       "pack_size": 12,
       "min_order_quantity": 24,
-      "order_quantity": 36
+      "order_quantity": 96
     },
     {
       "product_sku": "P_304",
       "product_name": "Miel 500g",
-      "raw_demand": 16,
+      "raw_demand": 35,
       "pack_size": 6,
       "min_order_quantity": 12,
-      "order_quantity": 18
+      "order_quantity": 36
+    },
+    {
+      "product_sku": "P_301",
+      "product_name": "Sucre Granule 1kg",
+      "raw_demand": 764,
+      "pack_size": 25,
+      "min_order_quantity": 50,
+      "order_quantity": 775
     }
   ]
 }

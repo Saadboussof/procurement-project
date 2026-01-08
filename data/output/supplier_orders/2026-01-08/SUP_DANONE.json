@@ -4,52 +4,52 @@
   "order_date": "2026-01-08",
   "items": [
     {
-      "product_sku": "P_103",
-      "product_name": "Yogurt Vanilla",
-      "raw_demand": 224,
-      "pack_size": 24,
-      "min_order_quantity": 50,
-      "order_quantity": 240
+      "product_sku": "P_104",
+      "product_name": "Danette Chocolate",
+      "raw_demand": 177,
+      "pack_size": 12,
+      "min_order_quantity": 48,
+      "order_quantity": 180
     },
     {
       "product_sku": "P_102",
       "product_name": "Yogurt Strawberry",
-      "raw_demand": 291,
+      "raw_demand": 328,
       "pack_size": 24,
       "min_order_quantity": 50,
-      "order_quantity": 312
-    },
-    {
-      "product_sku": "P_104",
-      "product_name": "Danette Chocolate",
-      "raw_demand": 167,
-      "pack_size": 12,
-      "min_order_quantity": 48,
-      "order_quantity": 168
-    },
-    {
-      "product_sku": "P_106",
-      "product_name": "Raibi Jamila",
-      "raw_demand": 184,
-      "pack_size": 12,
-      "min_order_quantity": 60,
-      "order_quantity": 192
+      "order_quantity": 336
     },
     {
       "product_sku": "P_101",
       "product_name": "Milk 1L",
-      "raw_demand": 137,
+      "raw_demand": 273,
       "pack_size": 12,
       "min_order_quantity": 100,
-      "order_quantity": 144
+      "order_quantity": 276
+    },
+    {
+      "product_sku": "P_106",
+      "product_name": "Raibi Jamila",
+      "raw_demand": 304,
+      "pack_size": 12,
+      "min_order_quantity": 60,
+      "order_quantity": 312
     },
     {
       "product_sku": "P_105",
       "product_name": "Activia Natural",
-      "raw_demand": 150,
+      "raw_demand": 132,
       "pack_size": 6,
       "min_order_quantity": 36,
-      "order_quantity": 150
+      "order_quantity": 132
+    },
+    {
+      "product_sku": "P_103",
+      "product_name": "Yogurt Vanilla",
+      "raw_demand": 167,
+      "pack_size": 24,
+      "min_order_quantity": 50,
+      "order_quantity": 168
     }
   ]
 }

@@ -26,13 +26,13 @@ services:
     container_name: hive-metastore
     environment:
       SERVICE_NAME: metastore
-      DB_DRIVER: derby
+      DB_DRIVER: postgres
       IS_RESUME: "true"
-    volumes:
-      - hive-metastore-data:/opt/hive/data
+      SERVICE_OPTS: "-Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver -Djavax.jdo.option.ConnectionURL=jdbc:postgresql://postgres:5432/metastore_db -Djavax.jdo.option.ConnectionUserName=user -Djavax.jdo.option.ConnectionPassword=password"
     ports:
       - "9083:9083"
-    links:
+    depends_on:
+      - postgres
       - namenode
       - datanode
   trino:
@@ -57,6 +57,7 @@ services:
       - "5432:5432"
     volumes:
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres-data:/var/lib/postgresql/data
 
 volumes:
-  hive-metastore-data:
+  postgres-data:

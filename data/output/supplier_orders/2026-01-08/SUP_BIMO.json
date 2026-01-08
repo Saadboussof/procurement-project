@@ -4,44 +4,20 @@
   "order_date": "2026-01-08",
   "items": [
     {
-      "product_sku": "P_404",
-      "product_name": "Cookies Chocolat",
-      "raw_demand": 152,
-      "pack_size": 12,
-      "min_order_quantity": 24,
-      "order_quantity": 156
-    },
-    {
-      "product_sku": "P_405",
-      "product_name": "Gaufrettes Fraise",
-      "raw_demand": 140,
-      "pack_size": 12,
-      "min_order_quantity": 24,
-      "order_quantity": 144
-    },
-    {
-      "product_sku": "P_406",
-      "product_name": "Crackers Sales",
-      "raw_demand": 100,
-      "pack_size": 18,
-      "min_order_quantity": 36,
-      "order_quantity": 108
+      "product_sku": "P_401",
+      "product_name": "Tagger Chocolate",
+      "raw_demand": 491,
+      "pack_size": 24,
+      "min_order_quantity": 48,
+      "order_quantity": 504
     },
     {
       "product_sku": "P_403",
       "product_name": "Biscuit Petit Dejeuner",
-      "raw_demand": 213,
+      "raw_demand": 300,
       "pack_size": 12,
       "min_order_quantity": 36,
-      "order_quantity": 216
-    },
-    {
-      "product_sku": "P_401",
-      "product_name": "Tagger Chocolate",
-      "raw_demand": 345,
-      "pack_size": 24,
-      "min_order_quantity": 48,
-      "order_quantity": 360
+      "order_quantity": 300
     },
     {
       "product_sku": "P_402",
@@ -50,6 +26,30 @@
       "pack_size": 24,
       "min_order_quantity": 48,
       "order_quantity": 288
+    },
+    {
+      "product_sku": "P_404",
+      "product_name": "Cookies Chocolat",
+      "raw_demand": 293,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 300
+    },
+    {
+      "product_sku": "P_405",
+      "product_name": "Gaufrettes Fraise",
+      "raw_demand": 142,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 144
+    },
+    {
+      "product_sku": "P_406",
+      "product_name": "Crackers Sales",
+      "raw_demand": 124,
+      "pack_size": 18,
+      "min_order_quantity": 36,
+      "order_quantity": 126
     }
   ]
 }
