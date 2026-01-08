@@ -26,8 +26,8 @@ services:
     container_name: hive-metastore
     environment:
       SERVICE_NAME: metastore
-      HIVE_SITE_CONF_javax_jdo_option_ConnectionURL: "jdbc:derby:;databaseName=metastore_db;create=true"
-      SKIP_SCHEMA_INIT: "true"
+      DB_DRIVER: derby
+      IS_RESUME: "true"
     volumes:
       - hive-metastore-data:/opt/hive/data
     ports:
