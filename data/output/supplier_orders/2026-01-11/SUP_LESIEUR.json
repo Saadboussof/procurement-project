@@ -1,0 +1,47 @@
+{
+  "supplier_name": "Lesieur Cristal",
+  "lead_time_days": 2,
+  "order_date": "2026-01-11",
+  "items": [
+    {
+      "product_sku": "P_205",
+      "product_name": "Moutarde 200g",
+      "raw_demand": 48,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 48
+    },
+    {
+      "product_sku": "P_203",
+      "product_name": "Mayonnaise 250g",
+      "raw_demand": 167,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 168
+    },
+    {
+      "product_sku": "P_204",
+      "product_name": "Ketchup 340g",
+      "raw_demand": 209,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 216
+    },
+    {
+      "product_sku": "P_202",
+      "product_name": "Huile Olive 500ml",
+      "raw_demand": 124,
+      "pack_size": 6,
+      "min_order_quantity": 12,
+      "order_quantity": 126
+    },
+    {
+      "product_sku": "P_201",
+      "product_name": "Huile Tournesol 1L",
+      "raw_demand": 245,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 252
+    }
+  ]
+}

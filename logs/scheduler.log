@@ -256,3 +256,48 @@ Running: docker cp data/raw/orders/2026-01-07\orders-agadir.json namenode:/tmp/o
 time="2026-01-07T22:00:03+01:00" level=error msg="Can't close tar writer: io: read/write on closed pipe"
 error during connect: Put "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/archive?noOverwriteDirNonDir=true&path=%2Ftmp": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
 [07/01/2026 22:00:03,63] Pipeline Complete. 
+[08/01/2026 22:00:03,53] Starting Procurement Pipeline... 
+=== Procurement Pipeline Setup & Test (Date: 2026-01-08) ===
+
+[1/7] Generating Data...
+Running: C:\Users\drqsa\AppData\Local\Programs\Python\Python312\python.exe generate_data.py
+
+[2/7] Checking Docker Containers...
+Running: docker ps
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+  Warning: The following containers seem to be missing or not running: ['namenode', 'trino', 'hive-metastore', 'postgres']
+  Please run 'docker-compose up -d' and wait for them to initialize.
+
+[3/7] Uploading Data to HDFS...
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/orders/2026-01-08
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/stock/2026-01-08
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+Running: docker cp data/raw/orders/2026-01-08\orders-agadir.json namenode:/tmp/orders-agadir.json
+  Error (code 1): time="2026-01-08T22:00:04+01:00" level=error msg="Can't add file \\\\?\\C:\\Users\\drqsa\\Desktop\\procurement-project\\data\\raw\\orders\\2026-01-08\\orders-agadir.json to tar: io: read/write on closed pipe"
+time="2026-01-08T22:00:04+01:00" level=error msg="Can't close tar writer: io: read/write on closed pipe"
+error during connect: Put "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/archive?noOverwriteDirNonDir=true&path=%2Ftmp": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+[08/01/2026 22:00:04,88] Pipeline Complete. 
+[10/01/2026  9:21:44,06] Starting Procurement Pipeline... 
+[11/01/2026 22:00:02,27] Starting Procurement Pipeline... 
+=== Procurement Pipeline Setup & Test (Date: 2026-01-11) ===
+
+[1/7] Generating Data...
+Running: C:\Users\drqsa\AppData\Local\Programs\Python\Python312\python.exe generate_data.py
+
+[2/7] Checking Docker Containers...
+Running: docker ps
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+  Warning: The following containers seem to be missing or not running: ['namenode', 'trino', 'hive-metastore', 'postgres']
+  Please run 'docker-compose up -d' and wait for them to initialize.
+
+[3/7] Uploading Data to HDFS...
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/orders/2026-01-11
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+Running: docker exec namenode hdfs dfs -mkdir -p /raw/stock/2026-01-11
+  Error (code 1): error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+Running: docker cp data/raw/orders/2026-01-11\orders-agadir.json namenode:/tmp/orders-agadir.json
+  Error (code 1): time="2026-01-11T22:00:03+01:00" level=error msg="Can't add file \\\\?\\C:\\Users\\drqsa\\Desktop\\procurement-project\\data\\raw\\orders\\2026-01-11\\orders-agadir.json to tar: io: read/write on closed pipe"
+time="2026-01-11T22:00:03+01:00" level=error msg="Can't close tar writer: io: read/write on closed pipe"
+error during connect: Put "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/archive?noOverwriteDirNonDir=true&path=%2Ftmp": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+[11/01/2026 22:00:03,50] Pipeline Complete. 
