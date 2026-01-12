@@ -1,0 +1,55 @@
+{
+  "supplier_name": "Centrale Danone",
+  "lead_time_days": 1,
+  "order_date": "2026-01-12",
+  "items": [
+    {
+      "product_sku": "P_105",
+      "product_name": "Activia Natural",
+      "raw_demand": 169,
+      "pack_size": 6,
+      "min_order_quantity": 36,
+      "order_quantity": 174
+    },
+    {
+      "product_sku": "P_102",
+      "product_name": "Yogurt Strawberry",
+      "raw_demand": 168,
+      "pack_size": 24,
+      "min_order_quantity": 50,
+      "order_quantity": 168
+    },
+    {
+      "product_sku": "P_104",
+      "product_name": "Danette Chocolate",
+      "raw_demand": 95,
+      "pack_size": 12,
+      "min_order_quantity": 48,
+      "order_quantity": 96
+    },
+    {
+      "product_sku": "P_101",
+      "product_name": "Milk 1L",
+      "raw_demand": 127,
+      "pack_size": 12,
+      "min_order_quantity": 100,
+      "order_quantity": 132
+    },
+    {
+      "product_sku": "P_106",
+      "product_name": "Raibi Jamila",
+      "raw_demand": 351,
+      "pack_size": 12,
+      "min_order_quantity": 60,
+      "order_quantity": 360
+    },
+    {
+      "product_sku": "P_103",
+      "product_name": "Yogurt Vanilla",
+      "raw_demand": 159,
+      "pack_size": 24,
+      "min_order_quantity": 50,
+      "order_quantity": 168
+    }
+  ]
+}
