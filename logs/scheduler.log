@@ -301,3 +301,5 @@ Running: docker cp data/raw/orders/2026-01-11\orders-agadir.json namenode:/tmp/o
 time="2026-01-11T22:00:03+01:00" level=error msg="Can't close tar writer: io: read/write on closed pipe"
 error during connect: Put "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/namenode/archive?noOverwriteDirNonDir=true&path=%2Ftmp": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
 [11/01/2026 22:00:03,50] Pipeline Complete. 
+[12/01/2026 22:00:02,19] Starting Procurement Pipeline... 
+^C

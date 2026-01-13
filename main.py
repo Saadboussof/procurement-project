@@ -58,7 +58,7 @@ def main():
     
     # Orders
     if os.path.exists(local_orders_path):
-        for f in os.listdir(local_orders_path):
+        for f in os.listdir(local_orders_path):  
             local_file = os.path.join(local_orders_path, f)
             remote_tmp = f"/tmp/{f}"
             run_command(f"docker cp {local_file} namenode:{remote_tmp}", check=True)

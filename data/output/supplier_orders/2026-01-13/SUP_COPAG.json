@@ -1,0 +1,55 @@
+{
+  "supplier_name": "Copag (Jaouda)",
+  "lead_time_days": 1,
+  "order_date": "2026-01-13",
+  "items": [
+    {
+      "product_sku": "P_501",
+      "product_name": "Lben 500ml",
+      "raw_demand": 366,
+      "pack_size": 12,
+      "min_order_quantity": 48,
+      "order_quantity": 372
+    },
+    {
+      "product_sku": "P_502",
+      "product_name": "Raib 500ml",
+      "raw_demand": 265,
+      "pack_size": 12,
+      "min_order_quantity": 48,
+      "order_quantity": 276
+    },
+    {
+      "product_sku": "P_503",
+      "product_name": "Jus Orange 1L",
+      "raw_demand": 201,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 204
+    },
+    {
+      "product_sku": "P_505",
+      "product_name": "Jus Multifruits 1L",
+      "raw_demand": 109,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 120
+    },
+    {
+      "product_sku": "P_506",
+      "product_name": "Lait Fermente 1L",
+      "raw_demand": 228,
+      "pack_size": 12,
+      "min_order_quantity": 36,
+      "order_quantity": 228
+    },
+    {
+      "product_sku": "P_504",
+      "product_name": "Jus Pomme 1L",
+      "raw_demand": 193,
+      "pack_size": 12,
+      "min_order_quantity": 24,
+      "order_quantity": 204
+    }
+  ]
+}
